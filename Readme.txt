@@ -1,4 +1,4 @@
-Thanks for downloading this template!
+PUBLIC repo for smartdj website.
 
 Template Name: Day
 Template URL: https://bootstrapmade.com/day-multipurpose-html-template-for-free/
