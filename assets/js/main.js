@@ -227,48 +227,6 @@
     }
   });
 
-
-	/* PixelForm */
-const pixelForm = document.getElementById('pixel-form');
-const formSubmitButton = document.getElementById('form-submit-button');
-const successMessage = document.getElementById('success-contact');
-
-function setFormLoadingState() {
-  pixelForm.classList.add('disabled'); // Add the 'disabled' class to the form
-  formSubmitButton.classList.add('disabled'); // Add the 'disabled' class to the submit button
-  formSubmitButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...'; // Add a loading spinner to the button
-  formSubmitButton.disabled = true; // Disable the submit button
-}
-
-function resetFormLoadingState() {
-  pixelForm.classList.remove('disabled'); // Remove the 'disabled' class from the form
-  formSubmitButton.classList.remove('disabled'); // Remove the 'disabled' class from the submit button
-  formSubmitButton.innerHTML = 'Submit'; // Reset the button text
-  formSubmitButton.disabled = false; // Enable the submit button
-}
-
-// Add an event listener to the form for submission
-pixelForm.addEventListener('submit', function(e) {
-	e.preventDefault();
-	setFormLoadingState();
-	const formData = new FormData(pixelForm);
-	const name = formData.get('name');
-	const email = formData.get('email');
-	
-	dataLayer.push({
-		'event': 'formSubmission',
-		'formType': 'PixelForm',
-		'name': name,
-		'email': email,
-	})
-	
-	setTimeout(function() {
-		resetFormLoadingState();
-		successMessage.classList.remove('d-none');
-		pixelForm.classList.add('d-none');
-	}, 500);
-})
-
 /**
  * Animation on scroll
  */
