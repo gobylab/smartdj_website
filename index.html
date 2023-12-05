@@ -183,6 +183,26 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <div id="preloader"></div>
 
+	<!-- Pixelform event script -->
+	<script>
+    document.getElementById('fs-frm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default submission
+
+        // Perform DataLayer push
+        window.dataLayer = window.dataLayer || [];
+				window.dataLayer.push({
+					'event': 'formSubmission',
+					'formType': 'PixelForm',
+					'name': document.getElementById('full-name').value,
+					'email': document.getElementById('email-address').value,
+				})
+
+        // Resume form submission
+        this.submit();
+    });
+</script>
+
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
